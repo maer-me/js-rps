@@ -1,0 +1,1 @@
+The Odin Project exercise, create a Rock, Paper, Scissors game in JS
