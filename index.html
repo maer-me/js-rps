@@ -24,6 +24,9 @@
                     return ( "scissors");
                 }
             }
+            // Declaring counters
+            let playerWins = 0;
+            let computerWins = 0;
 
             // A function that "plays the game". Check user input and
             // compare it to the selecion made in the computerPlay function
@@ -37,8 +40,10 @@
                 } else if (playerLower == "rock" && computerSelection == "scissors"
                     || playerLower == "paper" && computerSelection == "rock"
                     || playerLower == "scissors" && computerSelection == "paper") {
+                    playerWins += 1;
                     return (playerLower + " beats " + computerSelection + " you win!");
                 } else {
+                    computerWins += 1;
                     return (computerSelection + " beats " + playerSelection + " you lose!");
                 }
             }
@@ -46,10 +51,6 @@
             // A function that runs the game a specific number of times.
             // The game will run for as many times as defined by the "rounds" arg
             function game(rounds) {
-                // Declaring counters
-                let playerWins = 0;
-                let computerins = 0;
-
                 // Setting up the game loop
                 for (let i = 0; i < rounds; i++) {
                     
@@ -59,10 +60,8 @@
 
                     // Run the game with chosen vars
                     alert(playRound(playerSelection, computerSelection));
-
-                    // Check winner and update scores
-
                 }
+                alert("PLayerwins: " + playerWins + ", computerwins: " + computerWins);
             }
 
             game(5);
